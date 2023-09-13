@@ -1,0 +1,23 @@
+<h1>Edit Site Post</h1>
+<h2>
+    <%= @site_post.title %>
+</h2    >
+<%= form_with model:@site_post do |form| %>
+    <div>
+        <% if form.object.errors.any? %>
+            <% form.object.errors.full_messages.each do |message| %>
+                <div><%= message%></div>
+            <% end %>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+    </div>
+    <div>
+        <%= form.label :body %>
+        <%= form.text_area :body %>
+    </div>
+
+    <%= form.button %>
+<% end %>

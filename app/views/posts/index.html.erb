@@ -1,0 +1,10 @@
+<h1><%= @title %></h1>
+
+<% @site_posts.each do |site_post| %>
+    <div>
+        <h2><%= link_to site_post.title, site_post %></h2>
+        <%# <%= site_post_path(site_post.id)%> %>
+        <%# <%= site_post_path(site_post)%> %> 
+        <h1> <%= site_post.body %></h1>
+    </div>
+<% end %>
